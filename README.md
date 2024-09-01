@@ -6,7 +6,6 @@ Feel free to leave an issue or make pull requests
 
 ## Example
 
-___
 You could use class `DefaultProblemBuilder` to build some `Problem` and throw it as `RuntimeException`
 
 ```java
@@ -45,7 +44,7 @@ Documentation link : https://github.com/xeruvimov/jproblem
 	at sa.kheruvimov.jproblem.builder.DefaultProblemBuilder.buildAsRuntimeException(DefaultProblemBuilder.java:72)
 	at com.skheruvimov.script.ScriptTestProjApp.main(ScriptTestProjApp.java:27)
 ```
-
+---
 **_Only `what` field is required_**, so you also can make small messages
 
 ```java
@@ -63,7 +62,6 @@ What? : I dont want to force my colleges to read 'War and Peac' in every error c
 ```
 
 ## Installation
-___
 
 IN PROGRESS
 
