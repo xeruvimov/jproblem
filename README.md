@@ -63,6 +63,16 @@ What? : I dont want to force my colleges to read 'War and Peac' in every error c
 
 ## Installation
 
-IN PROGRESS
+```xml
+<dependency>
+    <groupId>io.github.xeruvimov</groupId>
+    <artifactId>jproblem</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+```
+implementation group: 'io.github.xeruvimov', name: 'jproblem', version: '1.0.0'
+```
 
 ### inspired by [JDoctor](https://github.com/melix/jdoctor)
