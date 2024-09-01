@@ -1,7 +1,7 @@
-package sa.kheruvimov.jproblem.builder;
+package io.github.xeruvimov.jproblem.builder;
 
-import sa.kheruvimov.jproblem.problem.Problem;
-import sa.kheruvimov.jproblem.problem.ProblemId;
+import io.github.xeruvimov.jproblem.problem.Problem;
+import io.github.xeruvimov.jproblem.problem.ProblemId;
 
 public interface Builder {
     Builder id(ProblemId id);

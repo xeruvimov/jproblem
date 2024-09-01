@@ -1,4 +1,4 @@
-package sa.kheruvimov.jproblem.problem;
+package io.github.xeruvimov.jproblem.problem;
 
 import java.util.Collections;
 import java.util.List;

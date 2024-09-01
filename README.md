@@ -41,7 +41,7 @@ Possible solutions :
     - Or just ignore this exception
 
 Documentation link : https://github.com/xeruvimov/jproblem
-	at sa.kheruvimov.jproblem.builder.DefaultProblemBuilder.buildAsRuntimeException(DefaultProblemBuilder.java:72)
+	at io.github.xeruvimov.jproblem.DefaultProblemBuilder.buildAsRuntimeException(DefaultProblemBuilder.java:72)
 	at com.skheruvimov.script.ScriptTestProjApp.main(ScriptTestProjApp.java:27)
 ```
 ---
@@ -57,7 +57,7 @@ throw DefaultProblemBuilder.newBuilder()
 Exception in thread "main" java.lang.RuntimeException: A problem happened
 
 What? : I dont want to force my colleges to read 'War and Peac' in every error cases
-	at sa.kheruvimov.jproblem.builder.DefaultProblemBuilder.buildAsRuntimeException(DefaultProblemBuilder.java:72)
+	at io.github.xeruvimov.jproblem.builder.DefaultProblemBuilder.buildAsRuntimeException(DefaultProblemBuilder.java:72)
 	at com.skheruvimov.script.ScriptTestProjApp.main(ScriptTestProjApp.java:20)
 ```
 

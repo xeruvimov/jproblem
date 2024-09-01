@@ -1,6 +1,6 @@
-package sa.kheruvimov.jproblem.render;
+package io.github.xeruvimov.jproblem.render;
 
-import sa.kheruvimov.jproblem.problem.Problem;
+import io.github.xeruvimov.jproblem.problem.Problem;
 
 public class DefaultTextRender {
 

@@ -1,9 +1,9 @@
-package sa.kheruvimov.jproblem.builder;
+package io.github.xeruvimov.jproblem.builder;
 
-import sa.kheruvimov.jproblem.problem.BaseProblem;
-import sa.kheruvimov.jproblem.problem.Problem;
-import sa.kheruvimov.jproblem.problem.ProblemId;
-import sa.kheruvimov.jproblem.render.DefaultTextRender;
+import io.github.xeruvimov.jproblem.problem.BaseProblem;
+import io.github.xeruvimov.jproblem.problem.Problem;
+import io.github.xeruvimov.jproblem.problem.ProblemId;
+import io.github.xeruvimov.jproblem.render.DefaultTextRender;
 
 import java.util.ArrayList;
 import java.util.List;
