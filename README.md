@@ -21,7 +21,7 @@ throw DefaultProblemBuilder.newBuilder()
         .buildAsRuntimeException();
 ```
 
-The code above will produce next exception is console
+The code above will produce next exception in console
 
 ```text
 Exception in thread "main" java.lang.RuntimeException: A problem happened
@@ -32,7 +32,7 @@ Where? : Just in main class
 
 What? : Test JProblem
 
-Why? : I whant to show how to use JProblem
+Why? : I want to show how to use JProblem
 
 Long description : Use it field to provide long description of error, may be you will need to write some context or anything else
 
@@ -56,7 +56,7 @@ throw DefaultProblemBuilder.newBuilder()
 ```text
 Exception in thread "main" java.lang.RuntimeException: A problem happened
 
-What? : I dont want to force my colleges to read 'War and Peac' in every error cases
+What? : I dont want to force my colleges to read 'War and Peace' in every error cases
 	at io.github.xeruvimov.jproblem.builder.DefaultProblemBuilder.buildAsRuntimeException(DefaultProblemBuilder.java:72)
 	at com.skheruvimov.script.ScriptTestProjApp.main(ScriptTestProjApp.java:20)
 ```
