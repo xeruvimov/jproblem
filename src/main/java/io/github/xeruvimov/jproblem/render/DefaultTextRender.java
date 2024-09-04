@@ -56,6 +56,7 @@ public class DefaultTextRender {
 
         problem.getDocumentationLink().ifPresent(documentationLink -> {
             sb.append("\n");
+            sb.append("\n");
             sb.append("Documentation link : ").append(documentationLink);
         });
         return sb.toString();
