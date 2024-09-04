@@ -3,6 +3,8 @@ package io.github.xeruvimov.jproblem.builder;
 import io.github.xeruvimov.jproblem.problem.Problem;
 import io.github.xeruvimov.jproblem.problem.ProblemId;
 
+import java.util.function.Function;
+
 public interface Builder {
     Builder id(ProblemId id);
 
@@ -21,4 +23,6 @@ public interface Builder {
     Problem build();
 
     RuntimeException buildAsRuntimeException();
+
+    <T extends Exception> T buildAsException(Function<String, T> exception);
 }

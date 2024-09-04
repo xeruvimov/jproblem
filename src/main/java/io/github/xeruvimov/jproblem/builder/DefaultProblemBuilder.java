@@ -7,9 +7,10 @@ import io.github.xeruvimov.jproblem.render.DefaultTextRender;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public class DefaultProblemBuilder implements Builder {
-    private ProblemData problemData;
+    private final ProblemData problemData;
 
     public DefaultProblemBuilder() {
         this.problemData = new ProblemData();
@@ -70,6 +71,12 @@ public class DefaultProblemBuilder implements Builder {
     public RuntimeException buildAsRuntimeException() {
         var problem = build();
         return new RuntimeException(DefaultTextRender.render(problem));
+    }
+
+    @Override
+    public <T extends Exception> T buildAsException(Function<String, T> exception) {
+        var problem = build();
+        return exception.apply(DefaultTextRender.render(problem));
     }
 
     private static class ProblemData {

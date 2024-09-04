@@ -6,7 +6,7 @@
 
     <groupId>io.github.xeruvimov</groupId>
     <artifactId>jproblem</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A simple Java library for helpful exception messages</description>
