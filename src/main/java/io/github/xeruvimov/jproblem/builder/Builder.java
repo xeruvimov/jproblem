@@ -20,6 +20,8 @@ public interface Builder {
 
     Builder documentedAt(String link);
 
+    Builder cause(Throwable cause);
+
     Problem build();
 
     RuntimeException buildAsRuntimeException();

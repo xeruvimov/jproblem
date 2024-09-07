@@ -9,16 +9,17 @@ Feel free to leave an issue or make pull requests
 You could use class `DefaultProblemBuilder` to build some `Problem` and throw it as `IllegalArgumentException` or any other
 
 ```java
-        throw DefaultProblemBuilder.newBuilder()
-                .id(() -> "Example ID, provide ID that will help you to identify a problem")
-                .what("Test JProblem") //required
-                .where("Just in main class")
-                .why("I want to show how to use JProblem")
-                .documentedAt("https://github.com/xeruvimov/jproblem")
-                .withLongDescription("Use this field to provide long description of error; you may need to write some context or anything else")
-                .addSolution("Use JProblem to write code that works as indeed")
-                .addSolution("Or just ignore this exception")
-                .buildAsException(IllegalArgumentException::new);
+throw DefaultProblemBuilder.newBuilder()
+        .id(() -> "Example ID, provide ID that will help you to identify a problem")
+        .what("Test JProblem") //required
+        .where("Just in main class")
+        .why("I want to show how to use JProblem")
+        .documentedAt("https://github.com/xeruvimov/jproblem")
+        .withLongDescription("Use this field to provide long description of error; you may need to write some context or anything else")
+        .addSolution("Use JProblem to write code that works as indeed")
+        .addSolution("Or just ignore this exception")
+        .cause(e)
+        .buildAsException(IllegalArgumentException::new);
 ```
 
 The code above will produce next exception in console
@@ -41,8 +42,10 @@ Possible solutions :
     - Or just ignore this exception
 
 Documentation link : https://github.com/xeruvimov/jproblem
-	at io.github.xeruvimov.jproblem.builder.DefaultProblemBuilder.buildAsException(DefaultProblemBuilder.java:79)
-	at com.skheruvimov.script.ScriptTestProjApp.main(ScriptTestProjApp.java:27)
+	at io.github.xeruvimov.jproblem.builder.DefaultProblemBuilder.buildAsException(DefaultProblemBuilder.java:91)
+	at com.skheruvimov.script.ScriptTestProjApp.main(ScriptTestProjApp.java:30)
+Caused by: java.lang.RuntimeException: Root cause
+	at com.skheruvimov.script.ScriptTestProjApp.main(ScriptTestProjApp.java:18)
 ```
 ---
 **_Only `what` field is required_**, so you also can make small messages
@@ -67,12 +70,12 @@ What? : I dont want to force my colleges to read 'War and Peace' in every error 
 <dependency>
     <groupId>io.github.xeruvimov</groupId>
     <artifactId>jproblem</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
 ```
-implementation group: 'io.github.xeruvimov', name: 'jproblem', version: '1.0.1'
+implementation group: 'io.github.xeruvimov', name: 'jproblem', version: '1.0.2'
 ```
 
 ### inspired by [JDoctor](https://github.com/melix/jdoctor)

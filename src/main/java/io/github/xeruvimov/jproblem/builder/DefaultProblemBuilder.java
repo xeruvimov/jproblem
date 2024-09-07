@@ -63,20 +63,34 @@ public class DefaultProblemBuilder implements Builder {
     }
 
     @Override
+    public Builder cause(Throwable cause) {
+        problemData.cause = cause;
+        return this;
+    }
+
+    @Override
     public Problem build() {
-        return new BaseProblem(problemData.id, problemData.shortDescription, problemData.longDescription, problemData.reason, problemData.solutions, problemData.link, problemData.context);
+        return new BaseProblem(problemData.id,
+                problemData.shortDescription,
+                problemData.longDescription,
+                problemData.reason,
+                problemData.solutions,
+                problemData.link,
+                problemData.context,
+                problemData.cause);
     }
 
     @Override
     public RuntimeException buildAsRuntimeException() {
-        var problem = build();
-        return new RuntimeException(DefaultTextRender.render(problem));
+        return buildAsException(RuntimeException::new);
     }
 
     @Override
     public <T extends Exception> T buildAsException(Function<String, T> exception) {
         var problem = build();
-        return exception.apply(DefaultTextRender.render(problem));
+        var result = exception.apply(DefaultTextRender.render(problem));
+        problem.getCause().ifPresent(result::initCause);
+        return result;
     }
 
     private static class ProblemData {
@@ -87,6 +101,7 @@ public class DefaultProblemBuilder implements Builder {
         List<String> solutions = new ArrayList<>();
         String link;
         String context;
+        Throwable cause;
     }
 
 }

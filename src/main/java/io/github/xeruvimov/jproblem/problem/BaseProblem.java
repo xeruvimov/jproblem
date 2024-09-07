@@ -12,7 +12,8 @@ public class BaseProblem implements Problem {
                        String reason,
                        List<String> solutions,
                        String documentationLink,
-                       String context) {
+                       String context,
+                       Throwable cause) {
         this.problemId = problemId;
         this.shortDescription = Objects.requireNonNull(shortDescription, "shortDescription must not be null");
         this.longDescription = longDescription;
@@ -20,6 +21,7 @@ public class BaseProblem implements Problem {
         this.solutions = Objects.requireNonNull(solutions);
         this.documentationLink = documentationLink;
         this.context = context;
+        this.cause = cause;
     }
 
     private final ProblemId problemId;
@@ -29,6 +31,7 @@ public class BaseProblem implements Problem {
     private final List<String> solutions;
     private final String documentationLink;
     private final String context;
+    private final Throwable cause;
 
     @Override
     public Optional<ProblemId> getId() {
@@ -63,5 +66,10 @@ public class BaseProblem implements Problem {
     @Override
     public Optional<String> getWhere() {
         return Optional.ofNullable(this.context);
+    }
+
+    @Override
+    public Optional<Throwable> getCause() {
+        return Optional.ofNullable(cause);
     }
 }

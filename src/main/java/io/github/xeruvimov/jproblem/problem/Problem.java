@@ -30,4 +30,8 @@ public interface Problem {
     default Optional<String> getWhere() {
         return Optional.empty();
     }
+
+    default Optional<Throwable> getCause() {
+        return Optional.empty();
+    }
 }
