@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * Default legacy {@link Builder} implementation.
+ * <p>
+ * For new code, prefer {@link StrictProblemBuilder} because it makes required fields
+ * mandatory at compile time.
+ */
 public class DefaultProblemBuilder implements Builder {
     private final ProblemData problemData;
 
@@ -16,6 +22,11 @@ public class DefaultProblemBuilder implements Builder {
         this.problemData = new ProblemData();
     }
 
+    /**
+     * Creates new legacy builder instance.
+     *
+     * @return builder instance
+     */
     public static Builder newBuilder() {
         return new DefaultProblemBuilder();
     }

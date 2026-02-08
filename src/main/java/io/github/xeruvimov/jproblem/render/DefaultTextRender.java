@@ -2,12 +2,28 @@ package io.github.xeruvimov.jproblem.render;
 
 import io.github.xeruvimov.jproblem.problem.Problem;
 
+/**
+ * Utility class for rendering {@link Problem} into human-readable text.
+ */
 public class DefaultTextRender {
 
+    /**
+     * Renders problem text with default header.
+     *
+     * @param problem problem object
+     * @return rendered text
+     */
     public static String render(Problem problem) {
         return render("A problem happened", problem);
     }
 
+    /**
+     * Renders problem text with custom header.
+     *
+     * @param header header text
+     * @param problem problem object
+     * @return rendered text
+     */
     public static String render(String header, Problem problem) {
         var sb = new StringBuilder();
         sb.append(header);
@@ -60,5 +76,27 @@ public class DefaultTextRender {
             sb.append("Documentation link : ").append(documentationLink);
         });
         return sb.toString();
+    }
+
+    /**
+     * Compacts a rendered multi-line problem text into a single line while preserving section boundaries.
+     * <p>
+     * The method treats blank lines as section separators and converts them to {@code " | "}.
+     * Single line breaks inside a section are converted to spaces, then repeated spaces are collapsed.
+     *
+     * @param renderedProblemText rendered problem text (for example, from {@link #render(Problem)})
+     * @return a normalized single-line representation convenient for HTTP JSON responses
+     */
+    public static String compactToSingleLine(String renderedProblemText) {
+        if (renderedProblemText == null) {
+            return null;
+        }
+        return renderedProblemText
+                .replace("\r\n", "\n")
+                .replace('\r', '\n')
+                .replaceAll("\\n\\s*\\n+", " | ")
+                .replace('\n', ' ')
+                .replaceAll("\\s{2,}", " ")
+                .trim();
     }
 }

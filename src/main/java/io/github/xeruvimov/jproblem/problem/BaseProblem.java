@@ -4,8 +4,23 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * Default immutable {@link Problem} implementation.
+ */
 public class BaseProblem implements Problem {
 
+    /**
+     * Creates immutable problem model.
+     *
+     * @param problemId problem id
+     * @param shortDescription short description (required)
+     * @param longDescription long description
+     * @param reason reason
+     * @param solutions possible solutions
+     * @param documentationLink documentation link
+     * @param context context
+     * @param cause root cause
+     */
     public BaseProblem(ProblemId problemId,
                        String shortDescription,
                        String longDescription,
@@ -18,7 +33,7 @@ public class BaseProblem implements Problem {
         this.shortDescription = Objects.requireNonNull(shortDescription, "shortDescription must not be null");
         this.longDescription = longDescription;
         this.reason = reason;
-        this.solutions = Objects.requireNonNull(solutions);
+        this.solutions = List.copyOf(Objects.requireNonNull(solutions, "solutions must not be null"));
         this.documentationLink = documentationLink;
         this.context = context;
         this.cause = cause;
